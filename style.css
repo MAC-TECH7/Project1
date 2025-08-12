@@ -21,7 +21,9 @@ section {
 ====================== */
 .hero {
   height: 100vh;
-  background: linear-gradient(135deg, #1e3a8a, #3b82f6);
+  background-image: url(images/project-4.jpg);
+  background-repeat: no no-repeat;
+  background-size: cover;
   color: white;
 }
 
