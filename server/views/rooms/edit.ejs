@@ -1,0 +1,31 @@
+<%- include('../layout', { body: `
+	<h3 class="mb-3">Edit Room</h3>
+	<form method="post" action="/rooms/<%= room.id %>?_method=PUT">
+		<div class="mb-3">
+			<label class="form-label">Number</label>
+			<input class="form-control" name="number" value="<%= room.number %>" required />
+		</div>
+		<div class="mb-3">
+			<label class="form-label">Type</label>
+			<input class="form-control" name="type" value="<%= room.type %>" required />
+		</div>
+		<div class="mb-3">
+			<label class="form-label">Rate (USD)</label>
+			<input class="form-control" type="number" step="0.01" name="rate" value="<%= room.rate %>" required />
+		</div>
+		<div class="mb-3">
+			<label class="form-label">Status</label>
+			<select class="form-select" name="status">
+				<% ['available','occupied','maintenance','cleaning'].forEach(s => { %>
+					<option value="<%= s %>" <%= room.status === s ? 'selected' : '' %>><%= s %></option>
+				<% }) %>
+			</select>
+		</div>
+		<div class="mb-3">
+			<label class="form-label">Description</label>
+			<textarea class="form-control" name="description"><%= room.description || '' %></textarea>
+		</div>
+		<button class="btn btn-primary" type="submit">Save</button>
+		<a class="btn btn-secondary" href="/rooms">Cancel</a>
+	</form>
+` }) %>

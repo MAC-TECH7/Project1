@@ -1,0 +1,30 @@
+<%- include('../layout', { body: `
+	<div class="d-flex justify-content-between align-items-center mb-3">
+		<h3>Invoices</h3>
+	</div>
+	<table class="table table-striped">
+		<thead>
+			<tr>
+				<th>#</th><th>Guest</th><th>Room</th><th>Issue Date</th><th>Total</th><th>Status</th><th></th>
+			</tr>
+		</thead>
+		<tbody>
+		<% (invoices || []).forEach(i => { %>
+			<tr>
+				<td><a href="/invoices/<%= i.id %>"><%= i.id.slice(0,8) %></a></td>
+				<td><%= i.guest_name %></td>
+				<td><%= i.room_number %></td>
+				<td><%= new Date(i.issue_date).toLocaleDateString() %></td>
+				<td>$<%= Number(i.total).toFixed(2) %></td>
+				<td><span class="badge text-bg-secondary"><%= i.status %></span></td>
+				<td class="text-end">
+					<form method="post" action="/invoices/create" class="d-inline">
+						<input type="hidden" name="reservation_id" value="<%= i.reservation_id %>" />
+						<button class="btn btn-sm btn-outline-primary" type="submit">Recreate</button>
+					</form>
+				</td>
+			</tr>
+		<% }) %>
+		</tbody>
+	</table>
+` }) %>

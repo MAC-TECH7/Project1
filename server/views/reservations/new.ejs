@@ -1,0 +1,37 @@
+<%- include('../layout', { body: `
+	<h3 class="mb-3">New Reservation</h3>
+	<form method="post" action="/reservations">
+		<div class="row">
+			<div class="col-md-6 mb-3">
+				<label class="form-label">Room</label>
+				<select class="form-select" name="room_id" required>
+					<option value="">Select</option>
+					<% (rooms || []).forEach(r => { %>
+						<option value="<%= r.id %>"><%= r.number %> - <%= r.type %> ($<%= r.rate %>)</option>
+					<% }) %>
+				</select>
+			</div>
+			<div class="col-md-6 mb-3">
+				<label class="form-label">Guest</label>
+				<select class="form-select" name="guest_id" required>
+					<option value="">Select</option>
+					<% (guests || []).forEach(g => { %>
+						<option value="<%= g.id %>"><%= g.last_name %>, <%= g.first_name %></option>
+					<% }) %>
+				</select>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-md-6 mb-3">
+				<label class="form-label">Check-in</label>
+				<input class="form-control" type="date" name="check_in" required />
+			</div>
+			<div class="col-md-6 mb-3">
+				<label class="form-label">Check-out</label>
+				<input class="form-control" type="date" name="check_out" required />
+			</div>
+		</div>
+		<button class="btn btn-primary" type="submit">Save</button>
+		<a class="btn btn-secondary" href="/reservations">Cancel</a>
+	</form>
+` }) %>
