@@ -1,18 +1,22 @@
 # Bootstrap Hotel Frontend
 
-Open these files directly in a browser:
+Project structure
 
 - `index.html` — Homepage
-- `admin.html` — Admin dashboard
-- `widgets.html` — Search and filter widgets
+- `pages/admin.html` — Admin dashboard
+- `pages/widgets.html` — Search and filter widgets
+- `assets/css/styles.css` — Shared custom styles
 
-All pages use Bootstrap 5 via CDN and a shared `styles.css`.
+All pages use Bootstrap 5 via CDN.
 
-If you have a local server available:
+Quick run
 
 ```bash
 cd /workspace && python3 -m http.server 8080
 ```
 
-Then browse `http://localhost:8080/index.html`.
+Open:
+- `http://localhost:8080/index.html`
+- `http://localhost:8080/pages/admin.html`
+- `http://localhost:8080/pages/widgets.html`
 
