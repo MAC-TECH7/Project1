@@ -1,0 +1,25 @@
+<%- include('../layout', { body: `
+	<h3 class="mb-3">New Guest</h3>
+	<form method="post" action="/guests">
+		<div class="row">
+			<div class="col-md-6 mb-3">
+				<label class="form-label">First name</label>
+				<input class="form-control" name="first_name" required />
+			</div>
+			<div class="col-md-6 mb-3">
+				<label class="form-label">Last name</label>
+				<input class="form-control" name="last_name" required />
+			</div>
+		</div>
+		<div class="mb-3">
+			<label class="form-label">Email</label>
+			<input class="form-control" type="email" name="email" />
+		</div>
+		<div class="mb-3">
+			<label class="form-label">Phone</label>
+			<input class="form-control" name="phone" />
+		</div>
+		<button class="btn btn-primary" type="submit">Save</button>
+		<a class="btn btn-secondary" href="/guests">Cancel</a>
+	</form>
+` }) %>

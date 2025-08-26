@@ -1,0 +1,30 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+	<div class="container-fluid">
+		<a class="navbar-brand" href="/">HMS</a>
+		<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#nav" aria-controls="nav" aria-expanded="false">
+			<span class="navbar-toggler-icon"></span>
+		</button>
+		<div id="nav" class="collapse navbar-collapse">
+			<ul class="navbar-nav me-auto">
+				<li class="nav-item"><a class="nav-link" href="/rooms">Rooms</a></li>
+				<li class="nav-item"><a class="nav-link" href="/reservations">Reservations</a></li>
+				<li class="nav-item"><a class="nav-link" href="/guests">Guests</a></li>
+				<li class="nav-item"><a class="nav-link" href="/housekeeping">Housekeeping</a></li>
+				<li class="nav-item"><a class="nav-link" href="/invoices">Invoices</a></li>
+				<li class="nav-item"><a class="nav-link" href="/reports">Reports</a></li>
+			</ul>
+			<ul class="navbar-nav">
+				<% if (session && session.user) { %>
+					<li class="nav-item"><span class="navbar-text me-2">Hello, <%= session.user.name %></span></li>
+					<li class="nav-item">
+						<form method="post" action="/logout" class="d-inline">
+							<button class="btn btn-outline-light btn-sm" type="submit">Logout</button>
+						</form>
+					</li>
+				<% } else { %>
+					<li class="nav-item"><a class="btn btn-outline-light btn-sm" href="/login">Login</a></li>
+				<% } %>
+			</ul>
+		</div>
+	</div>
+</nav>

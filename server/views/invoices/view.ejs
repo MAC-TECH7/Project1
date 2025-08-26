@@ -1,0 +1,57 @@
+<%- include('../layout', { body: `
+	<h3 class="mb-3">Invoice <small class="text-muted">#<%= invoice.id.slice(0,8) %></small></h3>
+	<div class="row g-3">
+		<div class="col-md-8">
+			<div class="card">
+				<div class="card-body">
+					<p class="mb-1"><strong>Guest:</strong> <%= reservation.guest_name %></p>
+					<p class="mb-1"><strong>Room:</strong> <%= reservation.room_number %></p>
+					<p class="mb-1"><strong>Period:</strong> <%= new Date(reservation.check_in).toLocaleDateString() %> - <%= new Date(reservation.check_out).toLocaleDateString() %></p>
+					<p class="mb-0"><strong>Total:</strong> $<%= Number(invoice.total).toFixed(2) %> <span class="badge text-bg-secondary"><%= invoice.status %></span></p>
+				</div>
+			</div>
+			<div class="card mt-3">
+				<div class="card-body">
+					<h5 class="card-title">Payments</h5>
+					<table class="table table-sm">
+						<thead><tr><th>Amount</th><th>Method</th><th>Date</th></tr></thead>
+						<tbody>
+							<% (payments || []).forEach(p => { %>
+								<tr>
+									<td>$<%= Number(p.amount).toFixed(2) %></td>
+									<td><%= p.method %></td>
+									<td><%= new Date(p.paid_at).toLocaleString() %></td>
+								</tr>
+							<% }) %>
+						</tbody>
+					</table>
+				</div>
+			</div>
+		</div>
+		<div class="col-md-4">
+			<div class="card">
+				<div class="card-body">
+					<h5 class="card-title">Add Payment</h5>
+					<form method="post" action="/invoices/<%= invoice.id %>/payments">
+						<div class="mb-3">
+							<label class="form-label">Amount</label>
+							<input class="form-control" type="number" step="0.01" name="amount" required />
+						</div>
+						<div class="mb-3">
+							<label class="form-label">Method</label>
+							<select class="form-select" name="method">
+								<option>cash</option>
+								<option>card</option>
+								<option>transfer</option>
+							</select>
+						</div>
+						<button class="btn btn-primary" type="submit">Record</button>
+					</form>
+					<hr />
+					<p class="mb-0"><strong>Paid:</strong> $<%= Number(paidTotal).toFixed(2) %></p>
+					<p><strong>Due:</strong> $<%= Number(invoice.total - paidTotal).toFixed(2) %></p>
+				</div>
+			</div>
+		</div>
+	</div>
+` }) %>

@@ -1,0 +1,36 @@
+<%- include('layout', { body: `
+	<div class="row g-3">
+		<div class="col-md-3">
+			<a class="card text-decoration-none" href="/rooms">
+				<div class="card-body">
+					<h5 class="card-title">Rooms</h5>
+					<p class="card-text">Manage room inventory and statuses.</p>
+				</div>
+			</a>
+		</div>
+		<div class="col-md-3">
+			<a class="card text-decoration-none" href="/reservations">
+				<div class="card-body">
+					<h5 class="card-title">Reservations</h5>
+					<p class="card-text">Create and track bookings.</p>
+				</div>
+			</a>
+		</div>
+		<div class="col-md-3">
+			<a class="card text-decoration-none" href="/guests">
+				<div class="card-body">
+					<h5 class="card-title">Guests</h5>
+					<p class="card-text">Guest profiles and history.</p>
+				</div>
+			</a>
+		</div>
+		<div class="col-md-3">
+			<a class="card text-decoration-none" href="/housekeeping">
+				<div class="card-body">
+					<h5 class="card-title">Housekeeping</h5>
+					<p class="card-text">Tasks and room readiness.</p>
+				</div>
+			</a>
+		</div>
+	</div>
+` }) %>
