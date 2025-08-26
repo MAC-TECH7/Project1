@@ -1,52 +1,25 @@
-# 🎨 Data-Driven Creative Portfolio
+# Bootstrap Hotel Frontend
 
-A fully responsive, vibrant one-page portfolio website for a **Data Analyst** with multidisciplinary expertise in:
+This is a static Bootstrap 5 frontend. All links are relative so it works from any folder in XAMPP.
 
-- 📊 Data Analytics & Visualization
-- 🌐 Web Development
-- 📣 Digital Marketing & Campaign Strategy
-- 📷 Photography
-- 🎨 Branding & Graphic Design
+Project structure
 
----
+- `index.html` — Homepage
+- `pages/admin.html` — Admin dashboard
+- `pages/widgets.html` — Search and filter widgets
+- `assets/css/styles.css` — Shared custom styles
 
-## 🚀 Features
+Run with XAMPP
 
-- **Hero Section** with name, tagline, and CTA
-- **About Me** section with animated counters
-- **Portfolio** with 8+ filterable project cards and modal support
-- **Services** showcased with icons and brief descriptions
-- **Contact Form** using [Formspree](https://formspree.io/)
-- **Sticky Navbar** and **Smooth Scrolling**
-- **Dark/Light Mode** toggle
-- **AI Chatbot Placeholder** (expandable with OpenAI API)
-- **Fully responsive** with Bootstrap 5 (mobile-first design)
+1) Copy the whole project folder (for example `hotel-frontend`) into your XAMPP `htdocs` directory.
+   - Windows: `C:\xampp\htdocs\hotel-frontend`
+   - macOS (XAMPP-VM): `/Applications/XAMPP/htdocs/hotel-frontend`
+   - Linux: `/opt/lampp/htdocs/hotel-frontend`
+2) Start Apache in the XAMPP control panel.
+3) Open your browser at:
+   - `http://localhost/hotel-frontend/index.html`
+   - `http://localhost/hotel-frontend/pages/admin.html`
+   - `http://localhost/hotel-frontend/pages/widgets.html`
 
----
-
-## 🎯 Tech Stack
-
-- HTML5, CSS3 (Custom + Bootstrap 5)
-- JavaScript (Vanilla)
-- Font Awesome for icons
-- Google Fonts (optional)
-- Formspree for contact submissions
-
----
-
-## 🎨 Color Palette
-
-| Role            | Color Name       | Hex Code    |
-|------------------|------------------|-------------|
-| Primary          | Royal/Navy Blue  | `#1e3a8a`   |
-| Accent           | Sky Blue         | `#3b82f6`   |
-| Highlight        | Yellow           | `#facc15`   |
-| Background       | White            | `#ffffff`   |
-| Text/Base        | Dark Gray        | `#333333`   |
-
-> **Tip:** Uses the 60-30-10 rule for color distribution and ensures accessibility compliance.
-
----
-
-## 📁 File Structure
+No backend or database is required for this UI.
 
