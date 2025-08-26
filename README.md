@@ -1,52 +1,44 @@
-# 🎨 Data-Driven Creative Portfolio
+# PHP + MySQL + Bootstrap Starter
 
-A fully responsive, vibrant one-page portfolio website for a **Data Analyst** with multidisciplinary expertise in:
+This is a minimal Dockerized starter using PHP 8.2 (Apache), MySQL 8, and Bootstrap 5 with a simple tasks CRUD example.
 
-- 📊 Data Analytics & Visualization
-- 🌐 Web Development
-- 📣 Digital Marketing & Campaign Strategy
-- 📷 Photography
-- 🎨 Branding & Graphic Design
+## Requirements
+- Docker and Docker Compose
 
----
+## Run
+```bash
+docker compose up -d --build
+```
 
-## 🚀 Features
+- App: `http://localhost:8080`
+- phpMyAdmin: `http://localhost:8081` (Host: `db`, User: `appuser`, Password: `apppassword`)
 
-- **Hero Section** with name, tagline, and CTA
-- **About Me** section with animated counters
-- **Portfolio** with 8+ filterable project cards and modal support
-- **Services** showcased with icons and brief descriptions
-- **Contact Form** using [Formspree](https://formspree.io/)
-- **Sticky Navbar** and **Smooth Scrolling**
-- **Dark/Light Mode** toggle
-- **AI Chatbot Placeholder** (expandable with OpenAI API)
-- **Fully responsive** with Bootstrap 5 (mobile-first design)
+## Project Structure
+```
+app/
+  index.php          # Bootstrap UI + CRUD
+  src/config.php     # PDO setup (reads env, default to docker values)
+php/
+  custom.ini         # PHP dev settings
+mysql/
+  001_init.sql       # Creates tasks table and seed
+```
 
----
+## Environment
+Copy `.env.example` to `.env` under `app/` if you want to override defaults.
 
-## 🎯 Tech Stack
+```
+DB_HOST=db
+DB_PORT=3306
+DB_NAME=appdb
+DB_USER=appuser
+DB_PASSWORD=apppassword
+```
 
-- HTML5, CSS3 (Custom + Bootstrap 5)
-- JavaScript (Vanilla)
-- Font Awesome for icons
-- Google Fonts (optional)
-- Formspree for contact submissions
+## Commands
+- Stop: `docker compose down`
+- Reset DB: `docker compose down -v && docker compose up -d`
 
----
-
-## 🎨 Color Palette
-
-| Role            | Color Name       | Hex Code    |
-|------------------|------------------|-------------|
-| Primary          | Royal/Navy Blue  | `#1e3a8a`   |
-| Accent           | Sky Blue         | `#3b82f6`   |
-| Highlight        | Yellow           | `#facc15`   |
-| Background       | White            | `#ffffff`   |
-| Text/Base        | Dark Gray        | `#333333`   |
-
-> **Tip:** Uses the 60-30-10 rule for color distribution and ensures accessibility compliance.
-
----
-
-## 📁 File Structure
-
+## Notes
+- The PHP container serves files from `app/` via Apache.
+- Bootstrap loaded from CDN.
