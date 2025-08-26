@@ -1,52 +1,18 @@
-# 🎨 Data-Driven Creative Portfolio
+# Bootstrap Hotel Frontend
 
-A fully responsive, vibrant one-page portfolio website for a **Data Analyst** with multidisciplinary expertise in:
+Open these files directly in a browser:
 
-- 📊 Data Analytics & Visualization
-- 🌐 Web Development
-- 📣 Digital Marketing & Campaign Strategy
-- 📷 Photography
-- 🎨 Branding & Graphic Design
+- `index.html` — Homepage
+- `admin.html` — Admin dashboard
+- `widgets.html` — Search and filter widgets
 
----
+All pages use Bootstrap 5 via CDN and a shared `styles.css`.
 
-## 🚀 Features
+If you have a local server available:
 
-- **Hero Section** with name, tagline, and CTA
-- **About Me** section with animated counters
-- **Portfolio** with 8+ filterable project cards and modal support
-- **Services** showcased with icons and brief descriptions
-- **Contact Form** using [Formspree](https://formspree.io/)
-- **Sticky Navbar** and **Smooth Scrolling**
-- **Dark/Light Mode** toggle
-- **AI Chatbot Placeholder** (expandable with OpenAI API)
-- **Fully responsive** with Bootstrap 5 (mobile-first design)
+```bash
+cd /workspace && python3 -m http.server 8080
+```
 
----
-
-## 🎯 Tech Stack
-
-- HTML5, CSS3 (Custom + Bootstrap 5)
-- JavaScript (Vanilla)
-- Font Awesome for icons
-- Google Fonts (optional)
-- Formspree for contact submissions
-
----
-
-## 🎨 Color Palette
-
-| Role            | Color Name       | Hex Code    |
-|------------------|------------------|-------------|
-| Primary          | Royal/Navy Blue  | `#1e3a8a`   |
-| Accent           | Sky Blue         | `#3b82f6`   |
-| Highlight        | Yellow           | `#facc15`   |
-| Background       | White            | `#ffffff`   |
-| Text/Base        | Dark Gray        | `#333333`   |
-
-> **Tip:** Uses the 60-30-10 rule for color distribution and ensures accessibility compliance.
-
----
-
-## 📁 File Structure
+Then browse `http://localhost:8080/index.html`.
 
